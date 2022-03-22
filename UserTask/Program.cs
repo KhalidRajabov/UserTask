@@ -40,9 +40,9 @@ namespace CSharp_AccesModifiers_Encapsulation_Readonly
         static string PassCheck(string name, int min, int max)
         {
             string input;
-            int k = 0;
-            int k1 = 0;
-            int k2 = 0;
+            int n = 0;
+            int n1 = 0;
+            int n2 = 0;
 
             do
             {
@@ -54,19 +54,22 @@ namespace CSharp_AccesModifiers_Encapsulation_Readonly
                 {
                     if (Char.IsNumber(passw[i]) == true)
                     {
-                        k1 = 1;
+                        n1 = 1;
                     }
                     if (char.IsUpper(passw[i]) == true)
                     {
-                        k2 = 1;
+                        n2 = 1;
                     }
                 }
 
-                k = k1 + k2;
-                return k;
+                n = n1 + n2;
+                //hər variantı yoxladım ama alınmır.
+                //Başqa cür də yazmışdım. Sadəcə elə olanda səhv də olsa qəbul eləyirdi.
+                //Bu halda isə int ötürməsini təmin edə bilmədim :(
+                return n;
             }
 
-            while (input.Length < min && input.Length > max && k != 2);
+            while (input.Length < min && input.Length > max && n != 2);
             return input;
         }
 
