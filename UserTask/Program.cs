@@ -9,12 +9,7 @@ namespace CSharp_AccesModifiers_Encapsulation_Readonly
         static void Main(string[] args)
         {
             #region test
-            /*            User pass = new User();
-                        typeof(User).GetField("_password", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(pass, "dhjakshdkahkd");
-                        var _password  = typeof(User).GetField("_password", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(pass);
 
-                        Console.WriteLine(_password);
-            */
             #endregion
             string username = GetInputStr("Enter your username: ", 5, 15);
 
@@ -22,7 +17,7 @@ namespace CSharp_AccesModifiers_Encapsulation_Readonly
             int userage = GetInputInt("Enter your age: ", 1, 120);
 
 
-            string userpass = PassCheck("Enter your password: ", 8, 15);
+            string userpass = PassCheck("Enter your password: ", 8, 15, 1);
             User user1 = new User()
             {
                 Username = username,
@@ -37,12 +32,9 @@ namespace CSharp_AccesModifiers_Encapsulation_Readonly
 
 
         }
-        static string PassCheck(string name, int min, int max)
+        static string PassCheck(string name, int min, int max, int pas)
         {
             string input;
-            int n = 0;
-            int n1 = 0;
-            int n2 = 0;
 
             do
             {
@@ -52,30 +44,22 @@ namespace CSharp_AccesModifiers_Encapsulation_Readonly
                 char[] passw = input.ToCharArray();
                 for (int i = 0; i < passw.Length; i++)
                 {
-                    if (Char.IsNumber(passw[i]) == true)
+                    if (char.IsNumber(passw[i]) == true && char.IsUpper(passw[i]) == true)
                     {
-                        n1 = 1;
-                    }
-                    if (char.IsUpper(passw[i]) == true)
-                    {
-                        n2 = 1;
+                        pas = 1;
                     }
                 }
-
-                n = n1 + n2;
-                //hər variantı yoxladım ama alınmır.
-                //Başqa cür də yazmışdım. Sadəcə elə olanda səhv də olsa qəbul eləyirdi.
-                //Bu halda isə int ötürməsini təmin edə bilmədim :(
-                return n;
+            
             }
 
-            while (input.Length < min && input.Length > max && n != 2);
+            while (input.Length < min ||  input.Length > max || pas >=2);
             return input;
         }
 
         static String GetInputStr(string name, int min, int max)
         {
             string input;
+
             do
             {
                 Console.Write(name);
