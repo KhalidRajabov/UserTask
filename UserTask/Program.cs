@@ -3,6 +3,16 @@ using System.Reflection;
 using CSharp_AccesModifiers_Encapsulation_Readonly.Models;
 namespace CSharp_AccesModifiers_Encapsulation_Readonly
 {
+
+    /*
+     İçindəki funksiyalar:
+           Username:  İstifadəçi adı ən az 5, ən çox 15 olmalıdır. Az və ya çox olanda bildiriş verir və yenidən yazmağı tələb edir.
+           Userage:  İstifadəçi yaşı ən az 1, ən çoxu 120 olmalıdır. Az, mənfi və ya 120dən çox yazanda bildiriş verərək yenidən yazmağı tələb edir.
+           Password:  Şifrəni ən az 8, ən çox 15 simvollu və mütləq ən az 1 rəqəm və böyük hərflə yazmaq lazımdı. 
+                    Əgər bir rəqəm və bir böyük hərf olmazsa bildiriş verərək yenidən yazmağı tələb edir. 
+                    Heç kimin köməyi olmadan iç içə for yazmaqla eləmişəm. Sadə ola bilər
+                    ama bu yolu tapmaq üçün əziyyət çəkdim. Əminəm ki bu təcrübə çox işimə yarayacaq.
+     */
     internal class Program
     {
         static void Main(string[] args)
