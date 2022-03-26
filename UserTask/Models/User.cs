@@ -11,9 +11,6 @@ namespace CSharp_AccesModifiers_Encapsulation_Readonly.Models
         private string _username;
         private int _age;
         private string _password;
-
-
-
         public string Username
         {
             get
@@ -22,17 +19,10 @@ namespace CSharp_AccesModifiers_Encapsulation_Readonly.Models
             }
             set
             {
-                if (value.Length < 5 || value.Length > 10)
-                {
-                    Console.WriteLine($"Username can not be out of range 5-10");
-                }
-                else
-                {
                     _username = value;
-                }
+                
             }
         }
-
         public string Password
         {
             get
@@ -41,16 +31,9 @@ namespace CSharp_AccesModifiers_Encapsulation_Readonly.Models
             }
             set
             {
-
-
                 _password = value;
-
-
-
-
             }
         }
-
         public int Age
         {
             get
@@ -59,22 +42,14 @@ namespace CSharp_AccesModifiers_Encapsulation_Readonly.Models
             }
             set
             {
-                if (value < 0 || value > 120)
-                {
-                    Console.WriteLine("Age can not be out of range 0-120");
-                }
-                else
-                {
-                    _age = value;
-                }
+                    _age = value;   
             }
         }
         public void UserInfo()
         {
-            Console.WriteLine($"You are now named {Username} as a user \n" +
-                $"Your age is set to  {Age} \n" +
-                $"Your password is set to {Password}");
+            Console.WriteLine($"You are now named === {Username} === as a user \n" +
+                $"Your age is set to  === {Age} === \n" +
+                $"Your password is set to === {Password} ===");
         }
-        
     }
 }
