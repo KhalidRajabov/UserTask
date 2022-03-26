@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Reflection;
 using CSharp_AccesModifiers_Encapsulation_Readonly.Models;
-
 namespace CSharp_AccesModifiers_Encapsulation_Readonly
 {
     internal class Program
@@ -39,15 +38,12 @@ namespace CSharp_AccesModifiers_Encapsulation_Readonly
                                 word = 2;
                             }
                         }
-                    
                     }
-
                 }
                 if (word != 2)
                 {
                     Console.WriteLine("Password must contain at least an uppercase and a number");
                 }
-                
             }
             while (word != 2 || input.Length < min ||  input.Length > max );
             return input;
@@ -59,6 +55,10 @@ namespace CSharp_AccesModifiers_Encapsulation_Readonly
             {
                 Console.Write(name);
                 input = Console.ReadLine();
+                if (input.Length<min || input.Length > max)
+                {
+                    Console.WriteLine("The length  of username must be between 5 and 15");
+                }
             } while (input.Length < min || input.Length > max);
             return input;
         }
@@ -69,6 +69,10 @@ namespace CSharp_AccesModifiers_Encapsulation_Readonly
             {
                 Console.Write(name);
                 input = Convert.ToInt32(Console.ReadLine());
+                if (min> input || max<input)
+                {
+                    Console.WriteLine("Age must not be less than 1, and more than 120");
+                }
             } while (input < min || input > max);
             return input;
         }
