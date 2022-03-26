@@ -45,9 +45,15 @@ namespace CSharp_AccesModifiers_Encapsulation_Readonly
                 char[] passw = input.ToCharArray();
                 for (int i = 0; i < passw.Length; i++)
                 {
-                    if (char.IsNumber(passw[i]) == true || char.IsUpper(passw[i]) == true)
+                    if (char.IsNumber(passw[i]) == true)
                     {
-                        word = 2;
+                        for (int j = 0; j < passw.Length; j++)
+                        {
+                            if (char.IsUpper(passw[j]) == true)
+                            {
+                                word = 2;
+                            }
+                        }
                     }
                 }
 
