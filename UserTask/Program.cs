@@ -17,7 +17,7 @@ namespace CSharp_AccesModifiers_Encapsulation_Readonly
             int userage = GetInputInt("Enter your age: ", 1, 120);
 
 
-            string userpass = PassCheck("Enter your password: ", 8, 15, 1);
+            string userpass = PassCheck("Enter your password: ", 8, 15, 0);
             User user1 = new User()
             {
                 Username = username,
@@ -34,8 +34,9 @@ namespace CSharp_AccesModifiers_Encapsulation_Readonly
         }
         static string PassCheck(string name, int min, int max, int pas)
         {
-            string input;
 
+            string input;
+            int word = pas;
             do
             {
 
@@ -44,15 +45,16 @@ namespace CSharp_AccesModifiers_Encapsulation_Readonly
                 char[] passw = input.ToCharArray();
                 for (int i = 0; i < passw.Length; i++)
                 {
-                    if (char.IsNumber(passw[i]) == true && char.IsUpper(passw[i]) == true)
+                    if (char.IsNumber(passw[i]) == true || char.IsUpper(passw[i]) == true)
                     {
-                        pas = 1;
+                        word = 2;
                     }
                 }
+
             
             }
 
-            while (input.Length < min ||  input.Length > max || pas >=2);
+            while (word != 2 || input.Length < min ||  input.Length > max );
             return input;
         }
 
