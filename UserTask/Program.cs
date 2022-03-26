@@ -67,7 +67,7 @@ namespace CSharp_AccesModifiers_Encapsulation_Readonly
                 input = Console.ReadLine();
                 if (input.Length<min || input.Length > max)
                 {
-                    Console.WriteLine("The length  of username must be between 5 and 15");
+                    Console.WriteLine("The length  of username must be between the range of 5 and 15");
                 }
             } while (input.Length < min || input.Length > max);
             return input;
